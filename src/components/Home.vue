@@ -1,10 +1,20 @@
 <script setup>
+    import { useCollection, useFirestore } from 'vuefire'
+    import { collection } from 'firebase/firestore'
+    const db = useFirestore()
+    const todos = useCollection(collection(db, 'hombre'))
+    console.log(todos)
 </script>
 
 <template>
     <div class="sloganDiv">
         <img src="../../public/slogan.png" alt="slogan" class="slogan">
         <!-- carrusel -->
+        <ul>
+            <li v-for="todo in todos" :key="todo.id">
+            {{ todo.title }}
+            </li>
+        </ul>
         <div class="divCorreo">
             <h2>Recibir noticias de productos al correo electrónico</h2>
             <p>
