@@ -3,18 +3,24 @@
     import { collection } from 'firebase/firestore'
     const db = useFirestore()
     const todos = useCollection(collection(db, 'hombre'))
-    console.log(todos)
 </script>
 
 <template>
     <div class="sloganDiv">
         <img src="../../public/slogan.png" alt="slogan" class="slogan">
         <!-- carrusel -->
-        <ul>
-            <li v-for="todo in todos" :key="todo.id">
-            {{ todo.title }}
-            </li>
-        </ul>
+        <div class="divCarrusel">
+            <ul class="ulCarrusel">
+                <li v-for="todo in todos" :key="todo.id">
+                    <div class="divImgCarrusel">
+                        <img :src="todo.image" :alt="todo.tittle" class="carruselImg">
+                    </div>
+                </li>
+                <button class="btnIzqCarrusel"></button>
+                <button class="buttonDerCarrusel">></button>
+            </ul>
+        </div>
+        
         <div class="divCorreo">
             <h2>Recibir noticias de productos al correo electrónico</h2>
             <p>

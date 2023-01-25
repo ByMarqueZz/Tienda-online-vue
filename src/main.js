@@ -7,9 +7,7 @@ import { auth } from './firebase.js'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 import Home from './components/Home.vue'
-import Mujer from './components/Mujer.vue'
-import Hombre from './components/Hombre.vue'
-import Accesorios from './components/Accesorios.vue'
+import Categoria from './components/Categoria.vue'
 
 import './assets/style.css'
 
@@ -34,17 +32,10 @@ const routes = [
     component: Home
   },
   {
-    path: '/mujer',
-    component: Mujer
+    path: '/categoria/:param?',
+    component: Categoria
   },
-  {
-    path: '/hombre',
-    component: Hombre
-  },
-  {
-    path: '/accesorios',
-    component: Accesorios
-  }
+
 ]
 
 const router = createRouter({
