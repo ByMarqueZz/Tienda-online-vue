@@ -8,6 +8,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 import Home from './components/Home.vue'
 import Categoria from './components/Categoria.vue'
+import Producto from './components/Producto.vue'
 
 import './assets/style.css'
 
@@ -32,9 +33,13 @@ const routes = [
     component: Home
   },
   {
-    path: '/categoria/:param?',
+    path: '/categoria/:categoria?',
     component: Categoria
   },
+  {
+    path: '/producto/:id?',
+    component: Producto
+  }
 
 ]
 
