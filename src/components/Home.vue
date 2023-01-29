@@ -2,7 +2,7 @@
     import { useCollection, useFirestore } from 'vuefire'
     import { collection } from 'firebase/firestore'
     const db = useFirestore()
-    const todos = useCollection(collection(db, 'hombre'))
+    const ropas = useCollection(collection(db, 'ropa'))
 </script>
 
 <template>
@@ -11,9 +11,9 @@
         <!-- carrusel -->
         <div class="divCarrusel">
             <ul class="ulCarrusel">
-                <li v-for="todo in todos" :key="todo.id">
+                <li v-for="ropa in ropas" :key="ropa.id">
                     <div class="divImgCarrusel">
-                        <img :src="todo.image" :alt="todo.tittle" class="carruselImg">
+                        <img :src="ropa.image" :alt="ropa.tittle" class="carruselImg">
                     </div>
                 </li>
                 <button class="btnIzqCarrusel"></button>
